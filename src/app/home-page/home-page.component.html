@@ -1,0 +1,35 @@
+<div class="home-container">
+  <h1>Products</h1>
+  <div *ngIf="loading">Loading products...</div>
+  <div *ngIf="error" class="error-message">{{ error }}</div>
+  
+  <div class="category-filter">
+    <label for="category">Filter by category:</label>
+    <select id="category" [(ngModel)]="selectedCategory" (change)="filterByCategory()">
+      <option value="">All Categories</option>
+      <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+    </select>
+  </div>
+
+  <div class="product-list">
+    <h2>Discover & Shop</h2>
+    <div *ngFor="let product of productList" class="product-card">
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.description }}</p>
+      <p>Price: {{ product.price | currency: 'INR': 'symbol' }}</p>
+      <button (click)="addToCart(product)">Add to Cart</button> <!-- Connect to addToCart method -->
+    </div>
+  </div>
+
+  <div class="hot-deals-container">
+    <h2>Hot Deals</h2>
+    <div class="hot-deals-list">
+      <div *ngFor="let product of hotDeals" class="product-card">
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.description }}</p>
+        <p>Price: {{ product.price | currency: 'INR': 'symbol' }}</p>
+        <button (click)="addToCart(product)">Add to Cart</button> <!-- Connect to addToCart method -->
+      </div>
+    </div>
+  </div>
+</div>

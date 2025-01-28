@@ -1,0 +1,42 @@
+<div class="signup-container">
+  <h2>Sign Up</h2>
+  <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
+    <div>
+      <label for="name">Name</label>
+      <input type="text" id="name" required [(ngModel)]="model.name" name="name">
+      <div *ngIf="signupForm.controls['name']?.invalid && (signupForm.controls['name']?.touched || signupForm.submitted)">
+        <small *ngIf="signupForm.controls['name']?.errors?.['required']">Name is required.</small>
+      </div>
+    </div>
+
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" required [(ngModel)]="model.email" name="email">
+      <div *ngIf="signupForm.controls['email']?.invalid && (signupForm.controls['email']?.touched || signupForm.submitted)">
+        <small *ngIf="signupForm.controls['email']?.errors?.['required']">Email is required.</small>
+        <small *ngIf="signupForm.controls['email']?.errors?.['email']">Invalid email format.</small>
+      </div>
+    </div>
+
+    <div>
+      <label for="password">Password</label>
+      <input type="password" id="password" required [(ngModel)]="model.password" name="password">
+      <div *ngIf="signupForm.controls['password']?.invalid && (signupForm.controls['password']?.touched || signupForm.submitted)">
+        <small *ngIf="signupForm.controls['password']?.errors?.['required']">Password is required.</small>
+      </div>
+    </div>
+
+    <div>
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" id="confirmPassword" required [(ngModel)]="confirmPassword" name="confirmPassword"
+             [ngClass]="{'is-invalid': passwordMismatch}">
+      <div *ngIf="passwordMismatch && (signupForm.controls['confirmPassword']?.touched || signupForm.submitted)">
+        <small>Passwords must match.</small>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="!signupForm.form.valid || passwordMismatch">Sign Up</button>
+  </form>
+
+  <p>Already have an account? <a routerLink="/login">Login</a></p>
+</div>

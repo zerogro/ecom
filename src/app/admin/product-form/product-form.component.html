@@ -1,0 +1,22 @@
+<h2>{{ isEditing ? 'Edit Product' : 'Add New Product' }}</h2>
+<form (ngSubmit)="saveProduct()">
+  <div>
+    <label>Name</label>
+    <input type="text" [(ngModel)]="product.name" name="name" required />
+  </div>
+  <div>
+    <label>Description</label>
+    <input type="text" [(ngModel)]="product.description" name="description" required />
+  </div>
+  <div>
+    <label>Price</label>
+    <input type="number" [(ngModel)]="product.price" name="price" required />
+  </div>
+  <div>
+    <label>Category</label>
+    <input type="text" [(ngModel)]="product.category" name="category" required />
+  </div>
+  <button type="submit">{{ isEditing ? 'Update' : 'Create' }}</button>
+</form>
+<a routerLink="/admin/products">Cancel</a>
+

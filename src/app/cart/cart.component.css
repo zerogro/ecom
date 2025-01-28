@@ -1,0 +1,151 @@
+body {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  overflow: hidden;
+}
+
+.cart-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background: rgba(253, 250, 250, 0.85);
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+  animation: slide-in 0.5s ease forwards;
+  overflow: hidden; /* Prevent overflow */
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.cart-container h2 {
+  text-align: center;
+  color: #189708;
+  margin-bottom: 20px;
+  font-size: 2em;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border: 2px solid #2d109a;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, background 0.3s;
+}
+
+.cart-item:hover {
+  transform: scale(1.02);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.item-name {
+  flex: 2;
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #1bc10c;
+}
+
+.item-quantity,
+.item-price {
+  flex: 1;
+  text-align: center;
+  font-size: 1.1em;
+  color: #fff;
+}
+
+.quantity-input {
+  width: 70px;
+  padding: 10px;
+  border: 2px solid #0e1fd1;
+  border-radius: 5px;
+  background: #fff;
+  color: #333;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.quantity-input:focus {
+  border-color: #1ec70b;
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 204, 0, 0.5);
+}
+
+.remove-button {
+  background: #ff5733;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 10px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.remove-button:hover {
+  background-color: #15be1b;
+  transform: scale(1.1);
+}
+
+.total {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-top: 20px;
+  text-align: center;
+  color: #45c616;
+}
+
+.proceed-button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #1138b6;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.proceed-button:hover {
+  background-color: #14b940;
+  transform: translateY(-2px);
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .cart-container {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .item-quantity, .item-price {
+    display: none; /* Hide these on small screens */
+  }
+
+  .quantity-input {
+    width: 100%;
+    margin-top: 10px;
+  }
+}

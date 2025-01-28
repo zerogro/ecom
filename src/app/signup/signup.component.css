@@ -1,0 +1,99 @@
+body {
+  background: linear-gradient(135deg, #4b0082, #ff6f61);
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  margin: 0;
+}
+
+.signup-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #ff6f61;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.signup-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.signup-container h2 {
+  text-align: center;
+  color: #4b0082;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.signup-container div {
+  margin-bottom: 20px;
+}
+
+.signup-container label {
+  display: block;
+  color: #4b0082;
+  font-weight: bold;
+}
+
+.signup-container input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #4b0082;
+  border-radius: 10px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-sizing: border-box;
+}
+
+.signup-container input:focus {
+  border-color: #ff6f61;
+  box-shadow: 0 0 8px rgba(255, 111, 97, 0.7);
+  outline: none;
+}
+
+.signup-container small {
+  color: #d9534f; /* Bootstrap danger color */
+  font-size: 12px;
+}
+
+.signup-container input.is-invalid {
+  border-color: #d9534f;
+}
+
+.signup-button {
+  display: block;
+  margin: 30px auto;
+  padding: 12px 20px;
+  background-color: #4b0082;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.signup-button:hover {
+  background-color: #ff6f61;
+  transform: translateY(-2px);
+}
+
+.signup-container p {
+  text-align: center;
+  color: #4b0082;
+}
+
+.signup-container a {
+  color: #ff6f61;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.signup-container a:hover {
+  color: #4b0082;
+}

@@ -1,0 +1,22 @@
+<div class="cart-container" *ngIf="isVisible">
+  <h2>Your Cart</h2>
+  <button (click)="toggleCart()" class="close-button">✖</button>
+
+  <div *ngIf="cartItems.length === 0" class="empty-cart">
+    Your cart is empty.
+  </div>
+
+  <div *ngFor="let item of cartItems" class="cart-item">
+    <span class="item-name">{{ item.name }}</span>
+    <span class="item-quantity">Qty: {{ item.quantity }}</span>
+    <input type="number" [(ngModel)]="item.quantity" (ngModelChange)="updateQuantity(item)" min="1" class="quantity-input" />
+    <span class="item-price">{{ item.price * item.quantity | currency:'INR':'symbol' }}</span>
+    <button class="remove-button" (click)="removeItem(item)">Remove</button> <!-- Remove button -->
+  </div>
+
+  <div class="total">
+    <h3>Total: {{ getTotal() | currency:'INR':'symbol' }}</h3>
+  </div>
+
+  <button class="proceed-button" (click)="generateBill()">Proceed to Buy</button>
+</div>

@@ -1,0 +1,10 @@
+<div *ngIf="user">
+    <h1>{{ user.name }}'s Profile</h1>
+    <p>Email: {{ user.email }}</p>
+    <p>Name: {{ user.name }}</p>
+    <!-- Add other user details as needed -->
+  </div>
+  <div *ngIf="!user">
+    <p>No user data found.</p>
+  </div>
+  
